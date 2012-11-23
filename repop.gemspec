@@ -6,7 +6,7 @@ require "repop/version"
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
   s.name        = "repop"
-  s.version     = "0.0.2"
+  s.version     = "0.0.3"
   s.authors     = ["Andrea Ranaldi"]
   s.email       = ["andrea.ranaldi@gmail.com"]
   s.homepage    = "https://github.com/MdreW/repop"

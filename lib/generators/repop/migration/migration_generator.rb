@@ -5,7 +5,7 @@ module Repop
   class MigrationGenerator < Rails::Generators::Base
     include Rails::Generators::Migration
 
-    desc "Generates migration for Tag and Tagging models"
+    desc "Generates migration for options and keys"
 
     def self.orm
       Rails::Generators.options[:rails][:orm]
