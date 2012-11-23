@@ -10,8 +10,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Andrea Ranaldi"]
   s.email       = ["andrea.ranaldi@gmail.com"]
   s.homepage    = "https://github.com/MdreW/repop"
-  s.summary     = "TODO: Summary of Repop."
-  s.description = "TODO: Description of Repop."
+  s.summary     = "Conditioned replacement text."
+  s.description = "Gem for replacing text based on the research keys."
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["GNU-AGPL-3.0","COPYRIGHT", "AUTHORS", "Rakefile", "README.md"]
   s.test_files = Dir["spec/**/*"]
