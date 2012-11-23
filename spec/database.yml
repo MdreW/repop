@@ -1,3 +1,3 @@
 sqlite3:
   adapter: sqlite3
-  database: rocket_tag.sqlite3
+  database: repop.sqlite3
