@@ -8,8 +8,8 @@ class RepopMigration < ActiveRecord::Migration
       t.timestamps
     end
 
-    add_index :repops, :repopable_id
-    add_index :repops, :repopable_type
+    add_index :repops, :repopsable_id
+    add_index :repops, :repopsable_type
   end
 
   def self.down
