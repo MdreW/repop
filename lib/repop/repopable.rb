@@ -1,5 +1,5 @@
-#module Repop
-module Repopable
+module Repop
+#module Repopable
   def add_repop
     has_many :repops, :as=>:repopable, :dependent=>:destroy, :class_name => "Repop::Repop"
     include InstanceMethods
