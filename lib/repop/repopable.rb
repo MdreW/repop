@@ -9,20 +9,12 @@ module Repop
 
       def initialize klass
         @klass = klass
-F        setup_relations
+        setup_relations
       end
 
       def setup_relations
         klass.has_many :repops , :dependent => :destroy , :as => :repopable, :class_name => "Repop::Repop"
       end
-    end
-
-    def taggings_for_context context_val
-      taggings.where{ taggings.context == context_val.to_s }
-    end
-
-    def destroy_tags_for_context context
-      taggings_for_context(context).delete_all
     end
 
     module InstanceMethods
