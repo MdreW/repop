@@ -16,6 +16,7 @@ module Repop
         klass.has_many :repops , :dependent => :destroy , :as => :repopable, :class_name => "Repop::Repop"
       end
     end
+  end
 
   module InstanceMethods
     def replace(text)
