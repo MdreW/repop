@@ -1,4 +1,4 @@
-repop (Alpa status)
+repop 0.0.10 (Beta version)
 ====================
 
-gem for replacing text based on the research keys
+gem for replacing text based on the research key
