@@ -1,4 +1,4 @@
-repop 0.0.10 (Beta version)
+repop 0.0.11 (RC1)
 ====================
 
 gem for replacing text based on the research key

@@ -1,22 +1,29 @@
 module Repop
-  def add_repop
+  def repop_add(exc = [])
     has_many :repops, :as=>:repopable, :dependent=>:destroy, :class_name => "Repop::Repop"
+    accepts_nested_attributes_for :repops, :allow_destroy => true, :reject_if => proc {|o| o['key'].blank? or exc.include?(o['key'])}
+    attr_accessible :repop_attributes
     include InstanceMethods
+    @@exc = exc
+  end
+  def repop_local
+    return @@exc
   end
   module InstanceMethods
     def repopable?
-      true
+      return true
     end
     def replace(text)
-      reg = Regexp.new("(#{self.repops.map{|o| o.tkey}.join('|')})")
-      value = Hash[self.repops.map{|o| [o.tkey,o.value]}]
-      return text.gsub(reg, value)
+      return text.gsub(repop_regexp, repop_value)
     end
     def repop_regexp
-      return Regexp.new("(#{self.repops.map{|o| o.tkey}.join('|')})")
+      local = self.class.repop_local.map{|a| "{#{a.to_s}}"}
+      repops = self.repops.map{|o| o.tkey}
+      tkeys = local + repops
+      return Regexp.new("(#{tkeys.join('|')})")
     end
     def repop_value
-      return Hash[self.repops.map{|o| [o.tkey,o.value]}]
+      return Hash[self.class.repop_local.map{|o| ["{#{o.to_s}}",send(o)]} + self.repops.map{|o| [o.tkey,o.value]}]
     end
   end
 end
