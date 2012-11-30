@@ -98,6 +98,17 @@ The "repop_world_regexp" method return a world regexp and "repop_world_value" me
 	"Good morning mister name, his car is repaired.".gsub(user.repop_world_regexp, user.repop_world_value)
 	# same as "user.world_replace("text")"
 
+### The next episode:
 
+* good spec test
+* class method for search by options or by keys
+* a simplified helper
+* more documentation
 
+### Collaborate
 
+* fork me
+* send your code
+* tell me your code
+* join
+* Bring me a coffee
