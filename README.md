@@ -76,15 +76,15 @@ Without use of "nested_attributes" is same of each other model
 
 The "replace" methods find the keys including braces
 
-  str = "Good morning mister {name}, his car {car} is repaired."
-  user = User.first
-  user.replace(str) -> "Good morning mister Andrea, his car Fusion 1.6 is repaired."
+	str = "Good morning mister {name}, his car {car} is repaired."
+	user = User.first
+	user.replace(str) -> "Good morning mister Andrea, his car Fusion 1.6 is repaired."
 
 The "world_replace" methods find any word boundary
 
-  str = "Good morning mister name, his car is repaired."
-  user = User.first
-  user.world_replace(str) -> "Good morning mister Andrea, his Fusion 1.6 is repaired."
+	str = "Good morning mister name, his car is repaired."
+	user = User.first
+	user.world_replace(str) -> "Good morning mister Andrea, his Fusion 1.6 is repaired."
 
 The "repop_regexp" method return a keys regexp with all params and the "repop_value" method return the value for regexp. These methods are usable with "gsub".
 
