@@ -88,7 +88,15 @@ The "world_replace" methods find any word boundary
 
 The "repop_regexp" method return a keys regexp with all params and the "repop_value" method return the value for regexp. These methods are usable with "gsub".
 
+	user - User.first
+	"Good morning mister {name}, his car {car} is repaired.".gsub(user.repop_regexp, user.repop_value)
+	 # same as "user.replace("text")"
+
 The "repop_world_regexp" method return a world regexp and "repop_world_value" method return its value. These methods are usable with "gsub".
+
+	user - User.first
+	"Good morning mister name, his car is repaired.".gsub(user.repop_world_regexp, user.repop_world_value)
+	# same as "user.world_replace("text")"
 
 
 
