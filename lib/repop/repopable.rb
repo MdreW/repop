@@ -25,6 +25,18 @@ module Repop
     def repop_value
       return Hash[self.class.repop_local.map{|o| ["{#{o.to_s}}",send(o)]} + self.repops.map{|o| [o.tkey,o.value]}]
     end
+    def world_replace(text)
+      return text.gsub(repop_world_regexp, repop_world_value)
+    end
+    def repop_world_regexp
+      local = self.class.repop_local.map{|a| a.to_s}
+      repops = self.repops.map{|o| o.key}
+      keys = local + repops
+      return Regexp.new("(#{keys.join('|')})\\b")
+    end
+    def repop_world_value
+      return Hash[self.class.repop_local.map{|o| [o.to_s,send(o)]} + self.repops.map{|o| [o.key,o.value]}]
+    end
   end
 end
 ActiveRecord::Base.extend Repop

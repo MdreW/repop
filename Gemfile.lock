@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    repop (0.0.1)
+    repop (0.0.11)
       rails (~> 3.2.9)
 
 GEM
